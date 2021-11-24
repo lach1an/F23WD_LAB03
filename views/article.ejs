@@ -1,0 +1,38 @@
+
+<%- include('header'); -%>
+<div class="content">
+      <h1> <%= product.name %> </h1>
+      <table id="catalog">
+          <thead>
+              <h2>Product Details:</h2>
+              <tr>
+                  <th scope="col">Category</th>
+                  <th scope="col">Supplier</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">VAT</th>
+                  <th scope="col">Remaining Stock</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <th scope="row">
+                   <a href="/api/catalog/<%= product.category %>"> <%= product.category %> </a>
+                </th>
+                <td>
+                    <a href="/api/catalog/supplier/<%= product.supplier %>"><%= product.supplier %>
+                </td>
+                <td>
+                   £ <%= product.price %>
+                </td>
+                <td>
+                    <%= product.vat %> %
+                </td>
+                <td>
+                  <%= product.stock %>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+</div>
+<br>
+<%- include('footer'); -%>
